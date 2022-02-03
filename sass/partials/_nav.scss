@@ -1,0 +1,20 @@
+.navbar {
+    background-color: getColour(darkgrey) !important;
+}
+
+.navbar-brand {
+    color: getColour(gold) !important;
+}
+
+.nav-link {
+    color: getColour(gold) !important;
+}
+
+.active {
+    color: getColour(white) !important;
+}
+
+.nav-link :hover {
+    color: getColour(white) ;
+    text-decoration: underline;
+}

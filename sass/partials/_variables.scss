@@ -1,0 +1,23 @@
+
+$font-logo: 'Playfair Display', serif;
+$font-text: 'Lato', sans-serif;
+
+
+
+
+$colours: (
+    darkgrey: #212529,
+    white: #FFFFFF,
+    blue: #2742DB,
+    lightblue: #B4D6FD,
+    gold: #FEFCAA,
+);
+
+
+@function getColour($colour) {
+    @return map-get($colours, $colour);
+}
+
+
+
+

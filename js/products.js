@@ -1,5 +1,5 @@
-const url ="http://localhost:8085/home";
-const heroBanner = document.querySelector(".herobanner");
+const url ="http://localhost:8085/products";
+const productContainer = document.querySelector(".product-container");
 
     async function getProducts() {
 	try {
@@ -9,9 +9,9 @@ const heroBanner = document.querySelector(".herobanner");
 
         for (let i = 0; i < data.length; i++) {
 
-            heroBanner.innerHTML += ` 
-            <div class="image"> <img src="${data[i].hero_banner.url}" />
-            <p> ${data[i].id} </p></div>`;
+            productContainer.innerHTML += ` 
+            <div class="image"> <img src="${data[i].image.url}" />
+            <p> ${data[i].price} </p></div>`;
         } 
         
     } catch (error) {
@@ -20,4 +20,3 @@ const heroBanner = document.querySelector(".herobanner");
 } 
 
 getProducts();
-

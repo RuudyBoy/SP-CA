@@ -1,14 +1,16 @@
-h1 {
+h1 h2 {
     font-family: $font-logo;
     color: getColour(pink);
 }
 
 p {
     font-family: $font-text;
-    color: getColour(white);
+    color: getColour(black);
+    font-size: 1em;
 }
 
 
 a {
     font-family: $font-text;
 }
+

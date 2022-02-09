@@ -15,8 +15,35 @@ body {
     flex-direction: column;
 }
 
+
 .wrapper {
     flex: 1 0 auto;
 }
 
+//Products
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.product-details {
+    text-align: center;
+    padding: 20px;
+    background-color: getColour(white);
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.product {
+    text-align: center;
+    margin: 10px;
+    padding: 10px 5px;
+    background-color: getColour(white);
+    border-radius: 10px;
+}
 

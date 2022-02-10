@@ -1,8 +1,33 @@
-const url ="http://localhost:8085/products/";
-const productContainer = document.querySelector(".product-container");
+export function renderProducts(productsToRender) {
+    const productContainer = document.querySelector(".product-container");
+    productContainer.innerHTML = "";
+
+    productsToRender.forEach(function (product) {
+        productContainer.innerHTML += ` 
+        <div class="product"> 
+        <h2> ${product.title}</h2>
+        <p> $${product.price} </p>
+        <a class="readMore" href="productdetails.html?id=${product.id}"> More details</a></div>`;
+    });
+
+}
 
 
-async function getProducts() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*async function getProducts() {
 	try {
         const response = await fetch(url);
         const data = await response.json();
@@ -43,3 +68,4 @@ function searchProducts(products) {
         getProducts(filteredProducts);
     };
 }
+*/ 

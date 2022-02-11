@@ -1,3 +1,8 @@
+import logoutButton from "./common/clearButton.js";
+import { getExistingFavs } from "./utils/favFunctions.js";
+
+
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -18,10 +23,54 @@ async function fetchDetails () {
 
         console.log(details);
 
-        createHTML(details);
+        //createHTML(details);
 
-    }
+        productDetails.innerHTML = 
+        `<div class="product-details"> 
+         <h2> ${details.title} </h2>
+         <p> ${details.description} </p>
+         <p> $${details.price} </p>
+         <i class="far fa-heart"></i>
+        </div>`;
+
+const favButtons = document.querySelectorAll(".product-details i");
+console.log(favButtons);
+
+favButtons.forEach((button) => {
+    button.addEventListener("click", handleClick);
+});
+
+function handleClick(event) {
+    console.log(event);
+    const id = this.dataset.id;
+    const title = this.dataset.title;
+
     
+    const currentFavs = getExistingFavs();
+    
+
+    const articleExists = currentFavs.find(function(fav) {
+        return fav.id === id;
+    });
+
+    if (articleExists === undefined) {
+        
+        const article = {id: id, title: title};
+        currentFavs.push(article);
+        saveFavs(currentFavs);
+    }
+    else {
+        const newFavs = currentFavs.filter((fav) => fav.id !== id);
+        saveFavs(newFavs);
+    }
+
+}
+
+function saveFavs(favs) {
+    localStorage.setItem("favourites", JSON.stringify(favs));
+}
+}
+
     catch (error) {
      console.log("error");
      productDetails.innerHTML = "An error has occured :("
@@ -30,14 +79,46 @@ async function fetchDetails () {
 
 fetchDetails ();
 
-function createHTML(details) {
-
-    productDetails.innerHTML = 
+/*function createHTML (details) {
+     productDetails.innerHTML = 
     `<div class="product-details"> 
      <h2> ${details.title} </h2>
      <p> ${details.description} </p>
      <p> $${details.price} </p>
-     <a class="addToCart" href="cartpage.html"> Add to cart </a>
+     <i class="far fa-heart"></i>
     </div>`;
+    //logoutButton();
 
 }
+*/
+
+
+
+   /* const id = this.dataset.id;
+    const title = this.dataset.title;
+
+    
+    const currentFavs = getExistingFavs();
+    
+
+    const articleExists = currentFavs.find(function(fav) {
+        return fav.id === id;
+    });
+
+    if (articleExists === undefined) {
+        
+        const article = {id: id, title: title};
+        currentFavs.push(article);
+        saveFavs(currentFavs);
+    }
+    else {
+        const newFavs = currentFavs.filter((fav) => fav.id !== id);
+        saveFavs(newFavs);
+    }
+
+}
+
+function saveFavs(favs) {
+    localStorage.setItem("favourites", JSON.stringify(favs));
+}
+*/

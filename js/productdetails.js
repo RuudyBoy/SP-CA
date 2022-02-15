@@ -1,4 +1,4 @@
-import logoutButton from "./common/clearButton.js";
+//import logoutButton from "./common/clearButton.js";
 import { getExistingFavs } from "./utils/favFunctions.js";
 
 
@@ -22,16 +22,16 @@ async function fetchDetails () {
         const details = await response.json();
 
         console.log(details);
+       
 
-        //createHTML(details);
-
-        productDetails.innerHTML = 
+        productDetails.innerHTML += 
         `<div class="product-details"> 
          <h2> ${details.title} </h2>
          <p> ${details.description} </p>
          <p> $${details.price} </p>
-         <i class="far fa-heart"></i>
+         <i class="far fa-heart" data-id="${details.id}" data-title="${details.title}"></i>
         </div>`;
+
 
 const favButtons = document.querySelectorAll(".product-details i");
 console.log(favButtons);
@@ -41,13 +41,16 @@ favButtons.forEach((button) => {
 });
 
 function handleClick(event) {
-    console.log(event);
+    console.log(event)
+    event.target.classList.toggle("fa");
+    event.target.classList.toggle("far");
     const id = this.dataset.id;
     const title = this.dataset.title;
 
+    console.log("title", title);
     
     const currentFavs = getExistingFavs();
-    
+     
 
     const articleExists = currentFavs.find(function(fav) {
         return fav.id === id;
@@ -78,47 +81,3 @@ function saveFavs(favs) {
 }
 
 fetchDetails ();
-
-/*function createHTML (details) {
-     productDetails.innerHTML = 
-    `<div class="product-details"> 
-     <h2> ${details.title} </h2>
-     <p> ${details.description} </p>
-     <p> $${details.price} </p>
-     <i class="far fa-heart"></i>
-    </div>`;
-    //logoutButton();
-
-}
-*/
-
-
-
-   /* const id = this.dataset.id;
-    const title = this.dataset.title;
-
-    
-    const currentFavs = getExistingFavs();
-    
-
-    const articleExists = currentFavs.find(function(fav) {
-        return fav.id === id;
-    });
-
-    if (articleExists === undefined) {
-        
-        const article = {id: id, title: title};
-        currentFavs.push(article);
-        saveFavs(currentFavs);
-    }
-    else {
-        const newFavs = currentFavs.filter((fav) => fav.id !== id);
-        saveFavs(newFavs);
-    }
-
-}
-
-function saveFavs(favs) {
-    localStorage.setItem("favourites", JSON.stringify(favs));
-}
-*/

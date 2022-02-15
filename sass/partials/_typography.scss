@@ -3,6 +3,10 @@ h1 h2 {
     color: getColour(pink);
 }
 
+h4 {
+    color: getColour(white);
+}
+
 p {
     font-family: $font-text;
     color: getColour(black);

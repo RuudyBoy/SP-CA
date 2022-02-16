@@ -3,7 +3,7 @@ import { searchProducts } from "./ui/searchProducts.js";
 //import { getExistingFavs } from "./utils/favFunctions.js";
 //import { createHTML } from "./productdetails.js";
 
-const url ="http://localhost:8085/products/";
+ const url ="http://localhost:8085/products/";
 
 
 async function getProducts() {

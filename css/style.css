@@ -101,6 +101,10 @@ a {
   font-family: "Lato", sans-serif;
 }
 
+span {
+  color: white;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;

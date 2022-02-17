@@ -10,25 +10,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-    <div class="menu-container"></div>
+    <div class="container">
+        <div class="menu-container"></div>
 
-    <h1>Login</h1>
+        <h1>Add Product</h1>
 
-    <form>
-        <div class="message-container"></div>
+        <form>
+            <div class="message-container"></div>
 
-        <div>
-            <label for="username"> Username/email</label>
-            <input id="username" />
-        </div>
-        <div>
-            <label for="password"> Password</label>
-            <input id="password" />
-        </div>
-        <button>Submit</button>
-    </form>
-</div>
-    <script src="js/login.js" type="module"></script>
+            <div>
+                <label for="name">Name</label>
+                <input id="name" />
+            </div>
+            <div>
+                <label for="price">Price</label>
+                <input id="price" />
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <textarea id="description"></textarea>
+            </div>
+            <button>Add</button>
+        </form>
+    </div>
+    <script src="js/add.js" type="module"></script>
 </body>
 </html>

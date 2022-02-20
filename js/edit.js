@@ -2,6 +2,7 @@ import { baseUrl } from "./settings/api.js";
 import displayMessage from "./common/displayMessage.js";
 import createMenu from "./common/createMenu.js";
 import { getToken } from "./utils/storage.js";
+import deleteButton from "./common/products/deleteButton.js"
 
 createMenu();
 
@@ -32,6 +33,8 @@ const loading = document.querySelector(".loading");
         price.value = details.price;
         description.value = details.description;
         idInput.value = details.id;
+
+        deleteButton(details.id);
 
         console.log(details);
     } catch (error) {
@@ -75,6 +78,8 @@ async function updateProduct(name, price, description, id) {
             Authorization: `Bearer ${token}`,
         },
     };
+
+   
 
     try {
         const response = await fetch(url, options);

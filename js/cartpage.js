@@ -1,4 +1,7 @@
 import { getExistingFavs } from "./utils/favFunctions.js";
+import createMenu from "./common/createMenu.js";
+
+createMenu();
 
 const favourites = getExistingFavs();
 

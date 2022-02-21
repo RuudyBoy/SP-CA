@@ -18,7 +18,9 @@ export default function createMenu() {
     console.log(username);
 
     container.innerHTML = `<div class="menu">
-                                <a href="products.html" class="${pathname === "/" || pathname === "/products.html" ? "active" : ""}">Products</a>
+                                <a href="index.html" class="${pathname === "/" || pathname === "/" ? "active" : ""}">Home</a>
+                                <a href="products.html" class="${pathname === "/" || pathname === "/" ? "active" : ""}">Products</a>
+                                <a href="cartpage.html" class="${pathname === "/" || pathname === "/" ? "active" : ""}">Cart</a>
                                 ${authLink}
                         </div>`;
 

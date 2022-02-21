@@ -1,5 +1,7 @@
 //import logoutButton from "./common/clearButton.js";
 import { getExistingFavs } from "./utils/favFunctions.js";
+import createMenu from "./common/createMenu.js";
+
 
 
 
@@ -10,6 +12,7 @@ console.log(id);
 
 
 const url ="http://localhost:8085/products/" + id;
+createMenu();
 
 const productDetails = document.querySelector(".spesific-product");
 

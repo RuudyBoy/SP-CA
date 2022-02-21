@@ -1,6 +1,6 @@
-h1 h2 {
+h1  {
     font-family: $font-logo;
-    color: getColour(pink);
+    color: getColour(white);
 }
 
 h4 {
@@ -16,6 +16,8 @@ p {
 
 a {
     font-family: $font-text;
+    text-decoration: none;
+    color: getColour(black);
 }
 
 //color of hi Admin when logged in

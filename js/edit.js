@@ -23,7 +23,7 @@ if (!id) {
 const productUrl = baseUrl + "products/" + id;
 
 const form = document.querySelector("form");
-const name = document.querySelector("#name");
+const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const idInput = document.querySelector("#id");
@@ -35,7 +35,7 @@ const loading = document.querySelector(".loading");
         const response = await fetch(productUrl);
         const details = await response.json();
 
-        name.value = details.name;
+        title.value = details.title;
         price.value = details.price;
         description.value = details.description;
         idInput.value = details.id;
@@ -58,21 +58,21 @@ function submitForm(event) {
 
     message.innerHTML = "";
 
-    const nameValue = name.value.trim();
+    const titleValue = title.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const idValue = idInput.value;
 
-    if (nameValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
+    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return displayMessage("warning", "Please supply proper values", ".message-container");
     }
 
-    updateProduct(nameValue, priceValue, descriptionValue, idValue);
+    updateProduct(titleValue, priceValue, descriptionValue, idValue);
 }
 
-async function updateProduct(name, price, description, id) {
+async function updateProduct(title, price, description, id) {
     const url = baseUrl + "products/" + id;
-    const data = JSON.stringify({ name: name, price: price, description: description });
+    const data = JSON.stringify({ title: title, price: price, description: description });
 
     const token = getToken();
 

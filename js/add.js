@@ -3,6 +3,12 @@ import createMenu from "./common/createMenu.js";
 import { getToken } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 
+const token = getToken();
+
+if (!token) {
+    location.href = "/";
+}
+
 createMenu();
 
 const form = document.querySelector("form");

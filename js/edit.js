@@ -4,6 +4,12 @@ import createMenu from "./common/createMenu.js";
 import { getToken } from "./utils/storage.js";
 import deleteButton from "./common/products/deleteButton.js"
 
+const token = getToken();
+
+if (!token) {
+    location.href = "/";
+}
+
 createMenu();
 
 const queryString = document.location.search;

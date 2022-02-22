@@ -1,5 +1,5 @@
-//import logoutButton from "./common/clearButton.js";
-import { getExistingFavs } from "./utils/favFunctions.js";
+
+import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
 
 
@@ -25,6 +25,8 @@ async function fetchDetails () {
         const details = await response.json();
 
         console.log(details);
+
+        //<i class="far fa-heart" data-id="${details.id}" data-title="${details.title}"></i>
        
 
         productDetails.innerHTML += 
@@ -32,14 +34,15 @@ async function fetchDetails () {
          <h2> ${details.title} </h2>
          <p> ${details.description} </p>
          <p> $${details.price} </p>
-         <i class="far fa-heart" data-id="${details.id}" data-title="${details.title}"></i>
+         <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" > Add to cart</a>
+         <a class="cta-button far" data-id="${details.id}" data-title="${details.title}" > Remove from cart</a>
         </div>`;
 
 
-const favButtons = document.querySelectorAll(".product-details i");
-console.log(favButtons);
+const addToCart = document.querySelectorAll(".product-details a");
+console.log(addToCart);
 
-favButtons.forEach((button) => {
+addToCart.forEach((button) => {
     button.addEventListener("click", handleClick);
 });
 
@@ -52,28 +55,28 @@ function handleClick(event) {
 
     console.log("title", title);
     
-    const currentFavs = getExistingFavs();
+    const currentProducts = getExistingProducts();
      
 
-    const articleExists = currentFavs.find(function(fav) {
-        return fav.id === id;
+    const productExists = currentProducts.find(function(product) {
+        return product.id === id;
     });
 
-    if (articleExists === undefined) {
+    if (productExists === undefined) {
         
-        const article = {id: id, title: title};
-        currentFavs.push(article);
-        saveFavs(currentFavs);
+        const product = {id: id, title: title};
+        currentProducts.push(product);
+        saveproducts(currentProducts);
     }
     else {
-        const newFavs = currentFavs.filter((fav) => fav.id !== id);
-        saveFavs(newFavs);
+        const newproducts = currentProducts.filter((product) => product.id !== id);
+        saveproducts(newproducts);
     }
 
 }
 
-function saveFavs(favs) {
-    localStorage.setItem("favourites", JSON.stringify(favs));
+function saveproducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
 }
 }
 

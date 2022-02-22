@@ -34,9 +34,8 @@ export function getUsername() {
 }
 
 // Function for logout 
-
 export function logout() {
-    localStorage.clear();
+   localStorage.clear();
 }
 
 function saveToStorage(key, value) {

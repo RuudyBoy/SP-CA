@@ -1,17 +1,16 @@
-import { getExistingFavs } from "./utils/favFunctions.js";
+import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
 
 createMenu();
 
-const favourites = getExistingFavs();
+const productsInCart = getExistingProducts();
 
 const cartContainer = document.querySelector(".cart");
 
-favourites.forEach((cart) => {
+productsInCart.forEach((cart) => {
     cartContainer.innerHTML += `<div class="cart-product">
     <h4>${cart.title}</h4>
     <p> ${cart.price} </p>
-    <a href="products.html"> Products view</a>
-    <i class="fa fa-heart"></i>
+    <a class="cta-button" href="products.html" > Products view</a>
 </div>`;    
 });

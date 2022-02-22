@@ -1,0 +1,35 @@
+// menu sammen slik at vi bruker sass
+
+.menu {
+   padding: 20px;
+}
+
+.menu-container {
+    text-align: center;
+    background-color: getColour(blue);
+    width: 100%; 
+}
+
+.menu a {
+    font-family: $font-logo;
+    color: getColour(white);
+    padding: 20px;
+}
+
+.active {
+    background-color: getColour(white);
+}
+
+
+
+#logout {
+    background: getColour(darkgrey);
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+

@@ -3,12 +3,14 @@ import {renderProducts} from "./renderProducts.js";
 export function searchProducts(products) {
     const search = document.querySelector(".search");
 
-    search.onkeyup = function () {
+    search.onkeyup = function (event) {
+
+        console.log(event);
 
         const searchValue = event.target.value.trim().toLowerCase();
 
         const filteredProducts = products.filter(function (product) {
-            if (product.title.toLowerCase().includes(searchValue)) {
+            if (product.title.toLowerCase().startsWith(searchValue)) {
                 return true;
             }
         });

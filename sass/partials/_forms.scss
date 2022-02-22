@@ -4,28 +4,30 @@
 }
 
 form {
-    padding: 2em;
+    padding: 20px;
     background: white;
-    border-radius: 1rem;
+    border-radius: 10px;
 }
 
 input {
     width: 100%;
     margin-top: 2px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 button {
-    background: rgb(11, 91, 133);
+    background: getColour(darkgrey);
+    border-radius: 5px;
+    margin: 5px;
     border: none;
     width: 200px;
     padding: 1rem;
     color: white;
-    margin-top: 10px;
     cursor: pointer;
-    border-radius: 0.2rem;
 }
+
+
 
 label {
     display: block;

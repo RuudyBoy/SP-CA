@@ -6,8 +6,8 @@ export function renderProducts(productsToRender) {
         <div class="product"> 
         <h2> ${product.title}</h2>
         <p> $${product.price} </p>
-        <a class="readMore" href="productdetails.html?id=${product.id}"> More details</a>
-        <a class="readMore" href="edit.html?id=${product.id}"> Edit product</a></div>`;
+        <a class="cta-button" href="productdetails.html?id=${product.id}"> More details</a>
+        <a class="cta-button" href="edit.html?id=${product.id}"> Edit product</a></div>`;
     });
 
 }

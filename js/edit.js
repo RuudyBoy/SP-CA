@@ -58,6 +58,7 @@ function submitForm(event) {
 
     message.innerHTML = "";
 
+
     const titleValue = title.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();

@@ -104,10 +104,6 @@ body {
   padding: 20px;
 }
 
-.active {
-  background-color: #FFFFFF;
-}
-
 #logout {
   background: #212529;
   border-radius: 5px;

@@ -16,7 +16,7 @@ createMenu();
 
             heroBanner.innerHTML += ` 
             <div class="banner"> 
-           <div class="image" style="background-image: url('${home[i].hero_banner.formats.large.url}')"> </div>
+           <div class="image" style="background-image: url('${home[i].image_url}')"> </div>
             <p> ${home[i].hero_banner.size} </p>
             </div>`;
         } 

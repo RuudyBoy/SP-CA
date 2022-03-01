@@ -1,6 +1,7 @@
 
 import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
+import { baseUrl } from "./settings/api.js";
 
 
 
@@ -26,6 +27,15 @@ async function fetchDetails () {
 
         console.log(details);
 
+        let img ="";
+
+        if(details.image) {
+            img = baseUrl+ details.image.url;
+        }
+        if (details.image_url) {
+            img = details.image_url;
+        }
+
         //<i class="far fa-heart" data-id="${details.id}" data-title="${details.title}"></i>
        
 
@@ -34,6 +44,7 @@ async function fetchDetails () {
          <h2> ${details.title} </h2>
          <p> ${details.description} </p>
          <p> $${details.price} </p>
+         <img class"img" src="${img}">
          <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" > Add to cart</a>
          <a class="cta-button far" data-id="${details.id}" data-title="${details.title}" > Remove from cart</a>
         </div>`;

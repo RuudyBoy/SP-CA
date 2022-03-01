@@ -13,10 +13,14 @@ createMenu();
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
-const image = document.querySelector("#url");
+const image = document.querySelector("#urlInput");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
+
+
+
+
 
 form.addEventListener("submit", submitForm);
 
@@ -32,7 +36,7 @@ function submitForm(event) {
 
     console.log("priceValue", priceValue);
 
-    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
+    if (titleValue.length === 0 || imageValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return displayMessage("warning", "Please supply proper values", ".message-container");
     }
 
@@ -42,7 +46,7 @@ function submitForm(event) {
 async function addProduct(title, image, price, description) {
     const url = baseUrl + "products";
 
-    const data = JSON.stringify({ title: title, image: image.url, price: price, description: description });
+    const data = JSON.stringify({ title: title, image_url: image, price: price, description: description });
 
     const token = getToken();
 

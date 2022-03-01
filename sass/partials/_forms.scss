@@ -27,6 +27,12 @@ button {
     cursor: pointer;
 }
 
+.message {
+    background-color: getColour(orange);
+    padding: 20px;
+    color: getColour(white);
+}
+
 
 
 label {

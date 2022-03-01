@@ -24,6 +24,7 @@ const productUrl = baseUrl + "products/" + id;
 
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
+const image = document.querySelector("#urlInput");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const idInput = document.querySelector("#id");
@@ -60,20 +61,21 @@ function submitForm(event) {
 
 
     const titleValue = title.value.trim();
+    const imageValue = image.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const idValue = idInput.value;
 
-    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
+    if (titleValue.length === 0 ||  imageValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0) {
         return displayMessage("warning", "Please supply proper values", ".message-container");
     }
 
-    updateProduct(titleValue, priceValue, descriptionValue, idValue);
+    updateProduct(titleValue, imageValue, priceValue, descriptionValue, idValue);
 }
 
-async function updateProduct(title, price, description, id) {
+async function updateProduct(title, image, price, description, id) {
     const url = baseUrl + "products/" + id;
-    const data = JSON.stringify({ title: title, price: price, description: description });
+    const data = JSON.stringify({ title: title, image_url:image, price: price, description: description });
 
     const token = getToken();
 

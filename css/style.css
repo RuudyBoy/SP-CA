@@ -104,6 +104,16 @@ body {
   padding: 20px;
 }
 
+.menu .active {
+  background-color: #212529;
+  color: #2742DB !important;
+}
+
+.active {
+  background-color: #212529;
+  color: #2742DB !important;
+}
+
 #logout {
   background: #212529;
   border-radius: 5px;
@@ -200,6 +210,12 @@ button {
   padding: 1rem;
   color: white;
   cursor: pointer;
+}
+
+.message {
+  background-color: #ff7801;
+  padding: 20px;
+  color: #FFFFFF;
 }
 
 label {

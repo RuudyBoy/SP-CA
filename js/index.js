@@ -37,17 +37,17 @@ const featuredProducts = document.querySelector(".featured-products");
         const response = await fetch(featuredUrl);
         const featured = await response.json();
         console.log(featured);
-       
-             for (let i = 0; i < featured.length; i++) {
+
+        if(featured.featured === true) {
+             
+            for (let i = 0; i < featured.length; i++) {
 
             featuredProducts.innerHTML += ` 
             <div class="banner"> 
             <p> ${featured[i].title} </p>
             </div>`;
         } 
-
-
-       
+        }
     } catch (error) {
         console.log(error);
     } 

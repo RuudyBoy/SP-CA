@@ -1,8 +1,9 @@
 import createMenu from "./common/createMenu.js";
+import { baseUrl } from "./settings/api.js";
 
 
-const url ="http://localhost:8085/home/";
-const heroBanner = document.querySelector(".hero-banner");
+const url = baseUrl + "home";
+const heroBanner = document.querySelector(".banner");
 
 createMenu();
 
@@ -12,14 +13,29 @@ createMenu();
         const home = await response.json();
         console.log(home);
 
-        for (let i = 0; i < home.length; i++) {
+       
 
-            heroBanner.innerHTML += ` 
-            <div class="banner"> 
-           <div class="image" style="background-image: url('${home[i].image_url}')"> </div>
-            <p> ${home[i].hero_banner.size} </p>
-            </div>`;
-        } 
+        home.forEach(function (banner) { 
+            
+        let img ="";
+
+        if(banner.image) {
+            img = baseUrl+ banner.hero_banner.url;
+        }
+        if (banner.image_url) {
+            img = banner.hero_banner.image_url;
+        }
+
+        heroBanner.innerHTML += 
+        `<div class="hero-banner"> 
+         <img class"image" src="${img}">
+        </div>`;
+        });
+
+
+        
+
+
         
     } catch (error) {
         console.log(error);
@@ -38,16 +54,27 @@ const featuredProducts = document.querySelector(".featured-products");
         const featured = await response.json();
         console.log(featured);
 
-        if(featured.featured === true) {
+       
              
-            for (let i = 0; i < featured.length; i++) {
+            for (let i = 0; i < featured.length; i++) { 
+                
+        let img ="";
 
-            featuredProducts.innerHTML += ` 
-            <div class="banner"> 
-            <p> ${featured[i].title} </p>
-            </div>`;
-        } 
+        if(featured[i].image) {
+            img = baseUrl + featured[i].image.url;
         }
+        if (featured[i].image_url) {
+            img = featured[i].image_url;
+        }
+
+                
+            if(featured[i].featured === true) {
+            featuredProducts.innerHTML += ` 
+            <div class="featured"> 
+            <img class"img" src="${img}">
+            </div>`;
+        } }
+        
     } catch (error) {
         console.log(error);
     } 

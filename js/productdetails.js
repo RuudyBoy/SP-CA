@@ -42,9 +42,10 @@ async function fetchDetails () {
         productDetails.innerHTML += 
         `<div class="product-details"> 
          <h2> ${details.title} </h2>
+         <img class"image" src="${img}">
          <p> ${details.description} </p>
          <p> $${details.price} </p>
-         <img class"img" src="${img}">
+         
          <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" > Add to cart</a>
          <a class="cta-button far" data-id="${details.id}" data-title="${details.title}" > Remove from cart</a>
         </div>`;

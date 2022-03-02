@@ -29,7 +29,6 @@ const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const idInput = document.querySelector("#id");
 const message = document.querySelector(".message-container");
-const loading = document.querySelector(".loading");
 
 (async function () {
     try {
@@ -47,7 +46,6 @@ const loading = document.querySelector(".loading");
     } catch (error) {
         console.log(error);
     } finally {
-        loading.style.display = "none";
         form.style.display = "block";
     }
 })();

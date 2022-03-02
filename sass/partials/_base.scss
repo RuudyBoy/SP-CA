@@ -41,8 +41,9 @@ body {
 .product-details {
     text-align: center;
     padding: 20px;
+    border: 1px solid getColour(blue) ;
     background-color: getColour(white);
-    border-radius: 10px;
+    border-radius: 2px;
     margin: 10px auto;
     max-width: 1000px;
 }
@@ -50,11 +51,11 @@ body {
 .product {
     display: grid;
     text-align: center;
-    margin: 5px;
-    padding: 10px;
     background-color: getColour(white);
     border-radius: 2px;
-    border: 2px solid black;
+    margin: 10px;
+    border: 1px solid getColour(blue) ;
+    box-shadow: 2px 4px 2px -2px getColour(blue);
 }
 
 .cart-product {
@@ -65,12 +66,26 @@ body {
     border-radius: 10px;
 }
 
-.cta-button {
-    color: getColour(white);
+.cta-button { 
+    font-family: $font-logo;
+    color: getColour(blue);
     font-size: 1em;
-    background-color: getColour(darkgrey);
     padding: 10px;
-    margin: 5px;
+}
+
+.cta-button:hover {
+   font-size: 1.1em;
+   text-decoration: underline;
+   transition: 0.5s;
+}
+/*border-radius: 2px;
+    background-color: getColour(blue);
+    padding: 10px;
+    margin: 5px;*/
+
+img {
+    margin: 0px auto;
+    max-width:100%;
 }
 
 @media (max-width: 850px) {

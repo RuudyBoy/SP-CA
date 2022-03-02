@@ -1,41 +1,66 @@
 .container {
-    max-width: 760px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 form {
+    width: 500px;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
 }
 
+
 input {
+    border: 2px solid getColour(blue) ;
+    border-radius: 2px;
     width: 100%;
-    margin-top: 2px;
     padding: 10px;
     font-size: 1em;
 }
 
+
 button {
-    background: getColour(darkgrey);
+    background: getColour(blue);
     border-radius: 5px;
     margin: 5px;
     border: none;
     width: 200px;
     padding: 1rem;
     color: white;
-    cursor: pointer;
 }
 
 .message {
-    background-color: getColour(orange);
-    padding: 20px;
-    color: getColour(white);
+    margin: 5px auto;
+}
+
+.message.error {
+    background: getColour(orange);
+    border-radius: 2px;
+    margin: 5px;
+    width: 200px;
+    padding: 10px;
+    color: white;
+}
+
+.message.warning {
+    background: getColour(orange);
+    border-radius: 2px;
+    width: 200px;
+    padding: 10px;
+    color: white;
+}
+
+.message.success {
+    background: green;
+    border-radius: 2px;
+    width: 200px;
+    padding: 10px;
+    color: white;
 }
 
 
-
 label {
+    font-family: $font-text;
+    padding: 5px;
     display: block;
     margin-top: 1rem;
 }
@@ -46,4 +71,11 @@ label {
     font-size: 0.9rem;
     margin-top: 2px;
 }
+
+textarea {
+    border: 1px solid getColour(blue) ;
+    width: 100%;
+}
+
+
 

@@ -1,4 +1,8 @@
 import { baseUrl } from "../settings/api.js";
+import { getUsername } from "../utils/storage.js";
+import logoutButton from "../common/logoutButton.js";
+
+
 
 export function renderProducts(productsToRender) {
     const productContainer = document.querySelector(".product-container");
@@ -14,14 +18,29 @@ export function renderProducts(productsToRender) {
             img = product.image_url;
         }
 
+        const { pathname } = document.location;
 
+        const username = getUsername();
+    
+        let authLink = `<a href="login.html" class="${pathname === "/login.html" ? "active" : ""}"></a>`;
+    
+        if (username) {
+            authLink = `<a class="cta-button" href="edit.html?id=${product.id}"> Edit product </a>`
+        }
+    
+        console.log(username);
+    
         productContainer.innerHTML += ` 
         <div class="product"> 
         <h2> ${product.title}</h2>
+        <img class"img" src="${img}"> 
         <p> $${product.price} </p>
-        <img class"img" src="${img}">
         <a class="cta-button" href="productdetails.html?id=${product.id}"> More details</a>
-        <a class="cta-button" href="edit.html?id=${product.id}"> Edit product</a></div>`;
+        ${authLink}</div>`;
+    
+
+
+        
     });
 
-}
+};

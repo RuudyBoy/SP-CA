@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-  background-image: #dfe8f0;
+  background-image: url(../../img/SP2-background.jpg);
   margin: 0;
   display: -ms-grid;
   display: grid;

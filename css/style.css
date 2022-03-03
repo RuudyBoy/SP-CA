@@ -67,7 +67,7 @@ body {
 
 .cta-button {
   background-color: #2742DB;
-  font-family: "Playfair Display", serif;
+  font-family: "Kanit", sans-serif;
   color: #FFFFFF;
   font-size: 1em;
   padding: 1em 4em;
@@ -199,7 +199,7 @@ hr {
 
 .menu a {
   cursor: pointer;
-  font-family: "Playfair Display", serif;
+  font-family: "Kanit", sans-serif;
   color: #FFFFFF;
   padding: 20px;
 }
@@ -257,26 +257,26 @@ i:hover {
 }
 
 h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   color: #2742DB;
 }
 
 h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   color: #FFFFFF;
 }
 
 p {
-  font-family: "Lato", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 1em;
 }
 
 a {
-  font-family: "Lato", sans-serif !important;
+  font-family: "Kanit", sans-serif !important;
   text-decoration: none;
 }
 
@@ -383,7 +383,7 @@ button {
 }
 
 label {
-  font-family: "Lato", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: bold;
   padding: 5px;
   display: block;

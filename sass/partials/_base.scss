@@ -38,24 +38,21 @@ body {
     max-width: 1000px;
 }
 
-.product-details {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid getColour(blue) ;
-    background-color: getColour(white);
-    border-radius: 2px;
-    margin: 10px auto;
-    max-width: 1000px;
+.search {
+    color: blue;
+    max-width: fit-content;
 }
 
+
+
 .product {
-    display: grid;
     text-align: center;
     background-color: getColour(white);
-    border-radius: 2px;
     margin: 10px;
-    border: 1px solid getColour(blue) ;
-    box-shadow: 2px 4px 2px -2px getColour(blue);
+}
+
+.price {
+    font-weight: bold;
 }
 
 .cart-product {
@@ -67,13 +64,21 @@ body {
 }
 
 .cta-button { 
+    background-color: getColour(blue);
     font-family: $font-logo;
-    color: getColour(blue);
+    color: getColour(white);
     font-size: 1em;
-    padding: 10px;
+    padding: 1em 4em;
+    cursor: pointer;
+    display: table;
 }
 
-.cta-button:hover {
+.cta-link {
+    color: getColour(blue);
+    margin-bottom: 10px;
+}
+
+.cta-link:hover {
    font-size: 1.1em;
    text-decoration: underline;
    transition: 0.5s;
@@ -88,11 +93,83 @@ img {
     max-width:100%;
 }
 
+//Product details
+
+.product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 20px;
+    border-radius: 2px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.details {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-size {
+    display:inline-flex;
+}
+
+.size {
+    font-weight: bold;
+    border: 2px solid getColour(black) ;
+    padding: 10px;
+    margin: 10px;
+}
+
+.details-img {
+    padding: 20px;
+}
+
+.details-text {
+    max-width: 400px;
+}
+
 @media (max-width: 850px) {
     
     .product-container {
         grid-template-columns: 1fr 1fr;
-
     }
 
+    .product-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .details {
+        margin-top: 10px;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    .product-size {
+        display:inline-flex;
+    }
+    
+    .size {
+        font-weight: bold;
+        border: 2px solid getColour(black) ;
+        padding: 10px;
+        margin: 10px;
+    }
+    
+   img {
+       max-width: 300px;
+   }
+    
+    .details-text {
+        max-width: 400px;
+    }
+
+}
+
+@media (max-width: 450px) { 
+    .product-container {
+        grid-template-columns: 1fr;
+    }
 }

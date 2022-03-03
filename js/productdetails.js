@@ -1,7 +1,7 @@
 
 import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
-import { baseUrl } from "./settings/api.js";
+//import { baseUrl } from "./settings/api.js";
 
 
 
@@ -27,27 +27,26 @@ async function fetchDetails () {
 
         console.log(details);
 
-        let img ="";
+       /* let img ="";
 
         if(details.image) {
             img = baseUrl+ details.image.url;
         }
         if (details.image_url) {
             img = details.image_url;
-        }
-
-        //<i class="far fa-heart" data-id="${details.id}" data-title="${details.title}"></i>
-       
+        } */  
 
         productDetails.innerHTML += 
         `<div class="product-details"> 
-         <h2> ${details.title} </h2>
-         <img class"image" src="${img}">
-         <p> ${details.description} </p>
-         <p> $${details.price} </p>
-         
-         <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" > Add to cart</a>
-         <a class="cta-button far" data-id="${details.id}" data-title="${details.title}" > Remove from cart</a>
+         <img class"details-image" src="${details.image_url}">
+         <div class="details"> 
+         <h1> ${details.title} </h1> 
+         <hr>
+         <p class="price"> $${details.price} </p>
+         <p class="details-text"> ${details.description} </p>
+         <div class="product-size"><p class="size">S</p> <p class="size">M</p> <p class="size" >L</p> <p class="size">XL</p></div>
+         <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${details.image_url}"> Add to cart</a>
+         </div> 
         </div>`;
 
 
@@ -64,8 +63,11 @@ function handleClick(event) {
     event.target.classList.toggle("far");
     const id = this.dataset.id;
     const title = this.dataset.title;
+    const price = this.dataset.price;
+    const image = this.dataset.image;
 
     console.log("title", title);
+    console.log(price);
     
     const currentProducts = getExistingProducts();
      
@@ -76,7 +78,7 @@ function handleClick(event) {
 
     if (productExists === undefined) {
         
-        const product = {id: id, title: title};
+        const product = {id: id, title: title, price: price, image_url: image};
         currentProducts.push(product);
         saveproducts(currentProducts);
     }

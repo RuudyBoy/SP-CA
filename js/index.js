@@ -13,24 +13,13 @@ createMenu();
         const home = await response.json();
         console.log(home);
 
-       
-
-        home.forEach(function (banner) { 
-            
-        let img ="";
-
-        if(banner.image) {
-            img = baseUrl+ banner.hero_banner.url;
-        }
-        if (banner.image_url) {
-            img = banner.hero_banner.image_url;
-        }
 
         heroBanner.innerHTML += 
         `<div class="hero-banner"> 
-         <img class"image" src="${img}">
+        <p>${home.hero_banner_alt_text}</p>
+         <img class"image" src="${home.hero_banner.url}">
         </div>`;
-        });
+       
 
 
         

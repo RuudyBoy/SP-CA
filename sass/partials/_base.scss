@@ -10,16 +10,16 @@ html, body {
 body {
     background-color: getColour(darkgrey);
     margin: 0 ;
-    font-family: $font-text;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+   
 }
 
 
 
-.wrapper {
+/*.wrapper {
     flex: 1 0 auto;
-}
+}*/
 
 .container {
     align-items: center;
@@ -49,6 +49,7 @@ body {
     text-align: center;
     background-color: getColour(white);
     margin: 10px;
+    padding-bottom: 10px;
 }
 
 .price {
@@ -91,6 +92,10 @@ body {
 img {
     margin: 0px auto;
     max-width:100%;
+}
+
+hr {
+    display: none;
 }
 
 //Product details
@@ -158,6 +163,7 @@ img {
         margin: 10px;
     }
     
+    
    img {
        max-width: 300px;
    }
@@ -168,8 +174,13 @@ img {
 
 }
 
-@media (max-width: 450px) { 
+@media (max-width: 670px) { 
     .product-container {
         grid-template-columns: 1fr;
+    }
+
+    hr {
+        display: contents;
+        color: getColour(blue);
     }
 }

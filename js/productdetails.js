@@ -46,7 +46,10 @@ async function fetchDetails () {
          <p class="details-text"> ${details.description} </p>
          <div class="product-size"><p class="size">S</p> <p class="size">M</p> <p class="size" >L</p> <p class="size">XL</p></div>
          <a class="cta-button fa" data-id="${details.id}" data-title="${details.title}" data-price="${details.price}" data-image="${details.image_url}"> Add to cart</a>
-         </div> 
+         <hr>
+         <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+         <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+         <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
         </div>`;
 
 

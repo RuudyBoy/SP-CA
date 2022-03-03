@@ -11,6 +11,7 @@
 }
 
 .menu a {
+    cursor: pointer;
     font-family: $font-logo;
     color: getColour(white);
     padding: 20px;
@@ -26,11 +27,22 @@ menu a.active {
     color: getColour(white) !important;
 }
 
+i {
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+i:hover {
+    color: aqua;
+}
+
 
 
 
 #logout {
-    background: getColour(darkgrey);
+    margin: 0px auto;
+    background: getColour(blue);
     border-radius: 5px;
     border: none;
     width: 200px;
@@ -38,4 +50,18 @@ menu a.active {
     color: white;
 }
 
+@media (max-width: 670px) { 
+   .menu {
+       display: grid;
+   }
+
+   .menu a {
+       color: blue;
+   }
+
+   .menu-container {
+       background-color: getColour(darkgrey);
+   }
+   
+}
 

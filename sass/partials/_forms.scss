@@ -1,31 +1,46 @@
 .container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 form {
-    width: 500px;
+    border-radius: 10px;
+    border: 2px solid getColour(blue);
+    background-color: getColour(white);
     padding: 20px;
+    margin: 20px;
+    width: 400px;
 }
 
 
+//input og textarea sammen
 input {
-    border: 2px solid getColour(blue) ;
+    border: 2px solid getColour(blue);
+    background-color: getColour(darkgrey);
     border-radius: 2px;
     width: 100%;
-    padding: 10px;
+    padding: 1em;
     font-size: 1em;
+}
+
+textarea {
+    background-color: getColour(darkgrey);
+    border: 2px solid getColour(blue) ;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 
 button {
     cursor: pointer;
+    font-size: 1em;
     background: getColour(blue);
     border-radius: 5px;
-    margin: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border: none;
-    width: 200px;
-    padding: 1rem;
+    width: 100%;
+    padding: 1em;
     color: white;
 }
 
@@ -36,31 +51,31 @@ button {
 .message.error {
     background: getColour(orange);
     border-radius: 2px;
-    margin: 5px;
-    width: 200px;
-    padding: 10px;
+    width: 100%;
+    padding: 1em;
     color: white;
 }
 
 .message.warning {
     background: getColour(orange);
     border-radius: 2px;
-    width: 200px;
-    padding: 10px;
+    width: 100%;
+    padding: 1em;
     color: white;
 }
 
 .message.success {
     background: green;
     border-radius: 2px;
-    width: 200px;
-    padding: 10px;
+    width: 100%;
+    padding: 1em;
     color: white;
 }
 
 
 label {
     font-family: $font-text;
+    font-weight: bold;
     padding: 5px;
     display: block;
     margin-top: 1rem;
@@ -73,9 +88,10 @@ label {
     margin-top: 2px;
 }
 
-textarea {
-    border: 1px solid getColour(blue) ;
-    width: 100%;
+@media (max-width: 600px) { 
+    form {
+        width: 250px;
+    }
 }
 
 

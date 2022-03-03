@@ -1,17 +1,17 @@
 // h1,h2 etc. sammen slik at vi bruker sass
 
 h1  {
-    font-family: $font-logo;
+    font-family: $font-heading;
     color: getColour(blue);
 }
 
 h2 {
-    font-family: $font-logo;
+    font-family: $font-heading;
     color: getColour(black);
 }
 
 h3 {
-    font-family: $font-logo;
+    font-family: $font-heading;
     color: getColour(white);
 }
 
@@ -23,7 +23,7 @@ p {
 
 
 a {
-    font-family: $font-text !important;
+    font-family: $font-a !important;
     text-decoration: none;
     color: getColour(black);
 }

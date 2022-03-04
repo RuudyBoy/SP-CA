@@ -58,7 +58,13 @@ body {
     font-weight: bold;
 }
 
+.cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .cart-product {
+    text-align: center;
     padding: 20px;
     background-color: getColour(white);
     border-radius: 10px;
@@ -72,6 +78,7 @@ body {
     padding: 1em 4em;
     cursor: pointer;
     display: table;
+    margin: auto;
 }
 
 .cta-link {
@@ -120,6 +127,7 @@ hr {
 }
 
 .size {
+    background-color: white;
     font-weight: bold;
     border: 2px solid getColour(black) ;
     padding: 10px;

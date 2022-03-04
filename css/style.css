@@ -8,7 +8,6 @@ html, body {
 }
 
 body {
-  background-image: url(../../img/SP2-background.jpg);
   margin: 0;
   display: -ms-grid;
   display: grid;
@@ -16,9 +15,16 @@ body {
       grid-template-rows: auto 1fr auto;
 }
 
-/*.wrapper {
-    flex: 1 0 auto;
-}*/
+.mainy {
+  background-image: url(../../img/SP2-background.jpg);
+}
+
+.wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
 .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -57,9 +63,15 @@ body {
   font-weight: bold;
 }
 
+.cart {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
 .cart-product {
   text-align: center;
-  margin: 10px;
   padding: 20px;
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -73,6 +85,7 @@ body {
   padding: 1em 4em;
   cursor: pointer;
   display: table;
+  margin: auto;
 }
 
 .cta-link {
@@ -125,6 +138,7 @@ hr {
 }
 
 .size {
+  background-color: white;
   font-weight: bold;
   border: 2px solid;
   padding: 10px;

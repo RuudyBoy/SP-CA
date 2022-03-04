@@ -15,7 +15,7 @@ productsInCart.forEach((cart) => {
 
     cartContainer.innerHTML += `<div class="cart-product">
     <h2>${cart.title}</h2>
-    <img class"details-image" src="${cart.image_url}"> 
+    <img class"cart-image" src="${cart.image_url}"> 
     <p> $${cart.price} </p>
     <a class="cta-button" href="products.html" > Products view</a>
 </div>`;    

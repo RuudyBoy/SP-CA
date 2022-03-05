@@ -8,14 +8,15 @@ html, body {
 
 
 body {
+    background-color: #f9f9f9;
     margin: 0 ;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
 
-.mainy {
+/*.mainy {
     background-image: url(../../img/SP2-background.jpg);
-}
+}*/
 
 
 
@@ -54,6 +55,8 @@ body {
     padding-bottom: 10px;
 }
 
+//Cartpage
+
 .price {
     font-weight: bold;
 }
@@ -63,9 +66,14 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
+.cart img {
+    max-height: 200px;
+}
+
 .cart-product {
     text-align: center;
     padding: 20px;
+    margin: 10px;
     background-color: getColour(white);
     border-radius: 10px;
 }
@@ -78,7 +86,14 @@ body {
     padding: 1em 4em;
     cursor: pointer;
     display: table;
-    margin: auto;
+}
+
+.cta-button:hover { 
+    border: 2px solid getColour(darkgrey);
+    color: getColour(white);
+    font-size: 1.2em;
+    transition: 00.5s;
+    background-color: getColour(hover);
 }
 
 .cta-link {
@@ -101,9 +116,6 @@ img {
     max-width:100%;
 }
 
-hr {
-    display: none;
-}
 
 //Product details
 
@@ -115,6 +127,10 @@ hr {
     border-radius: 2px;
     margin: 10px auto;
     max-width: 1000px;
+}
+
+.product-details i {
+   color: getColour(blue);
 }
 
 .details {
@@ -163,6 +179,11 @@ hr {
     .product-size {
         display:inline-flex;
     }
+
+    .cart {
+        display: grid;
+        grid-template-columns:1fr;
+    }
     
     .size {
         font-weight: bold;
@@ -185,10 +206,5 @@ hr {
 @media (max-width: 670px) { 
     .product-container {
         grid-template-columns: 1fr;
-    }
-
-    hr {
-        display: contents;
-        color: getColour(blue);
     }
 }

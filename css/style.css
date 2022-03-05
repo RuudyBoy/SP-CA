@@ -8,6 +8,7 @@ html, body {
 }
 
 body {
+  background-color: #f9f9f9;
   margin: 0;
   display: -ms-grid;
   display: grid;
@@ -15,10 +16,9 @@ body {
       grid-template-rows: auto 1fr auto;
 }
 
-.mainy {
-  background-image: url(../../img/SP2-background.jpg);
-}
-
+/*.mainy {
+    background-image: url(../../img/SP2-background.jpg);
+}*/
 .wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -70,9 +70,14 @@ body {
       grid-template-columns: 1fr 1fr;
 }
 
+.cart img {
+  max-height: 200px;
+}
+
 .cart-product {
   text-align: center;
   padding: 20px;
+  margin: 10px;
   background-color: #FFFFFF;
   border-radius: 10px;
 }
@@ -85,7 +90,15 @@ body {
   padding: 1em 4em;
   cursor: pointer;
   display: table;
-  margin: auto;
+}
+
+.cta-button:hover {
+  border: 2px solid #dfe8f0;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  -webkit-transition: 00.5s;
+  transition: 00.5s;
+  background-color: #046BF1;
 }
 
 .cta-link {
@@ -109,10 +122,6 @@ img {
   max-width: 100%;
 }
 
-hr {
-  display: none;
-}
-
 .product-details {
   display: -ms-grid;
   display: grid;
@@ -124,6 +133,10 @@ hr {
   border-radius: 2px;
   margin: 10px auto;
   max-width: 1000px;
+}
+
+.product-details i {
+  color: #2742DB;
 }
 
 .details {
@@ -176,6 +189,12 @@ hr {
     display: -ms-inline-flexbox;
     display: inline-flex;
   }
+  .cart {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
   .size {
     font-weight: bold;
     border: 2px solid;
@@ -194,10 +213,6 @@ hr {
   .product-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-  }
-  hr {
-    display: contents;
-    color: #2742DB;
   }
 }
 
@@ -219,8 +234,11 @@ hr {
 }
 
 .menu a:hover {
-  background-color: #dfe8f0;
   color: #FFFFFF !important;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 1.2em;
 }
 
 menu a.active {
@@ -235,29 +253,30 @@ i {
 }
 
 i:hover {
-  color: aqua;
+  color: #046BF1;
 }
 
 #logout {
   margin: 0px auto;
-  background: #2742DB;
+  background-color: #2742DB;
   border-radius: 5px;
-  border: none;
+  border: 2px solid white;
   width: 200px;
   padding: 1rem;
   color: white;
+}
+
+#logout:hover {
+  font-size: 1.2em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #046BF1;
 }
 
 @media (max-width: 670px) {
   .menu {
     display: -ms-grid;
     display: grid;
-  }
-  .menu a {
-    color: blue;
-  }
-  .menu-container {
-    background-color: #dfe8f0;
   }
 }
 

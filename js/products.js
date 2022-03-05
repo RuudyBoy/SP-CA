@@ -13,10 +13,11 @@ async function getProducts() {
         const response = await fetch(url);
         const products = await response.json();
 
-        console.log(products);
-
-        renderProducts(products);
+        console.log(products); 
+        
         searchProducts(products);
+        renderProducts(products);
+       
 
         
     } catch (error) {

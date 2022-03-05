@@ -14,10 +14,6 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-/*.mainy {
-    background-image: url(../../img/SP2-background.jpg);
-}*/
-
 
 
 .wrapper {
@@ -30,6 +26,26 @@ body {
     margin: 0px auto;
     text-align: center;
 }
+
+
+//featured
+
+.featured-products {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.featured {
+    text-align: center;
+    background-color: getColour(white);
+    margin: 10px;
+    padding:20px;
+}
+
+.featured img {
+    max-height: 300px;
+}
+
 
 //Productpage
 
@@ -195,10 +211,16 @@ img {
     
    img {
        max-width: 300px;
+       max-height: 300px;
    }
     
     .details-text {
         max-width: 400px;
+    }
+
+    .featured-products {
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
 }

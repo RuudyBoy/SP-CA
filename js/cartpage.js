@@ -1,6 +1,5 @@
 import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
-import { baseUrl } from "./settings/api.js";
 
 createMenu();
 
@@ -12,11 +11,23 @@ productsInCart.forEach((cart) => {
 
     console.log(cart);
 
+    if (cart === 0) {
+        cartContainer.innerHTML += `<p> The cart is empty </p>`;    
+    }
+
+   
+
+
 
     cartContainer.innerHTML += `<div class="cart-product">
     <h2>${cart.title}</h2>
     <img class"cart-image" src="${cart.image_url}"> 
     <p> $${cart.price} </p>
     <a class="cta-button" href="products.html" > Products view</a>
-</div>`;    
-});
+</div>`;
+   
+  }
+  
+);
+
+

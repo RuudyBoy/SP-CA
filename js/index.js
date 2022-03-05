@@ -13,11 +13,20 @@ createMenu();
         const home = await response.json();
         console.log(home);
 
+        let img ="";
+
+        if(home.image) {
+            img = baseUrl + home.hero_banner.url;
+        }
+        if (home.image_url) {
+            img = home.hero_banner.large.url;
+        }
+
 
         heroBanner.innerHTML += 
         `<div class="hero-banner"> 
         <p>${home.hero_banner_alt_text}</p>
-         <img class"image" src="${home.hero_banner.url}">
+         <img class"image" src="${home.hero_banner.large.url}">
         </div>`;
        
 
@@ -46,21 +55,14 @@ const featuredProducts = document.querySelector(".featured-products");
        
              
             for (let i = 0; i < featured.length; i++) { 
-                
-        let img ="";
 
-        if(featured[i].image) {
-            img = baseUrl + featured[i].image.url;
-        }
-        if (featured[i].image_url) {
-            img = featured[i].image_url;
-        }
-
-                
             if(featured[i].featured === true) {
             featuredProducts.innerHTML += ` 
             <div class="featured"> 
-            <img class"img" src="${img}">
+            <img class"img" src="${featured[i].image_url}">
+            <h2> ${featured[i].title}</h2> 
+            <p class="price"> $${featured[i].price} </p>
+            <a class="cta-button" href="products.html">See more</a>
             </div>`;
         } }
         

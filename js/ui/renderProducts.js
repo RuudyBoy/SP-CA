@@ -6,6 +6,8 @@ import { getUsername } from "../utils/storage.js";
 export function renderProducts(productsToRender) {
     const productContainer = document.querySelector(".product-container");
 
+    productContainer.innerHTML="";
+
     productsToRender.forEach(function (product) {
 
         const { pathname } = document.location;
@@ -17,8 +19,8 @@ export function renderProducts(productsToRender) {
         if (username) {
             authLink = `<a class="cta-link" href="edit.html?id=${product.id}">I Edit product </a>`
         }
-    
-        console.log(username);
+        
+        console.log(username)
     
         productContainer.innerHTML += ` 
         <div class="product"> 

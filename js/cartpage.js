@@ -1,5 +1,6 @@
 import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
+import displayMessage from "./common/displayMessage.js";
 
 createMenu();
 
@@ -7,16 +8,11 @@ const productsInCart = getExistingProducts();
 
 const cartContainer = document.querySelector(".cart");
 
+
+
 productsInCart.forEach((cart) => {
 
     console.log(cart);
-
-    if (cart === 0) {
-        cartContainer.innerHTML += `<p> The cart is empty </p>`;    
-    }
-
-   
-
 
 
     cartContainer.innerHTML += `<div class="cart-product">

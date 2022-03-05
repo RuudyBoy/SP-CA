@@ -15,8 +15,8 @@ async function getProducts() {
 
         console.log(products); 
         
-        searchProducts(products);
         renderProducts(products);
+        searchProducts(products);
        
 
         

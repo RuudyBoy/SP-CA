@@ -13,27 +13,20 @@ createMenu();
         const home = await response.json();
         console.log(home);
 
-        let img ="";
 
-        if(home.image) {
-            img = baseUrl + home.hero_banner.url;
+        let banner ="";
+
+        if(home.hero_banner.url) {
+            banner = "http://localhost:8085" + home.hero_banner.url;
         }
-        if (home.image_url) {
-            img = home.hero_banner.large.url;
-        }
-
-
-        heroBanner.innerHTML += 
-        `<div class="hero-banner"> 
-        <p>${home.hero_banner_alt_text}</p>
-         <img class"image" src="${home.hero_banner.large.url}">
-        </div>`;
-       
-
-
         
 
-
+        heroBanner.innerHTML += 
+        `<div class="hero-banner">
+         <h1 class="banner-heading"> Be fashionable</h1>
+         <img class"banner" src="${banner}">
+        </div>`;
+    
         
     } catch (error) {
         console.log(error);

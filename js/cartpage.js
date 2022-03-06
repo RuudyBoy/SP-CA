@@ -12,9 +12,6 @@ const cartContainer = document.querySelector(".cart");
 
 productsInCart.forEach((cart) => {
 
-    console.log(cart);
-
-
     cartContainer.innerHTML += `<div class="cart-product">
     <h2>${cart.title}</h2>
     <img class"cart-image" src="${cart.image_url}"> 

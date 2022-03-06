@@ -1,9 +1,6 @@
 
 import { getExistingProducts } from "./utils/productFunctions.js";
 import createMenu from "./common/createMenu.js";
-//import { baseUrl } from "./settings/api.js";
-
-
 
 
 const queryString = document.location.search;
@@ -13,6 +10,7 @@ console.log(id);
 
 
 const url ="http://localhost:8085/products/" + id;
+
 createMenu();
 
 const productDetails = document.querySelector(".spesific-product");
@@ -24,17 +22,6 @@ async function fetchDetails () {
 
         const response = await fetch(url);
         const details = await response.json();
-
-        console.log(details);
-
-       /* let img ="";
-
-        if(details.image) {
-            img = baseUrl+ details.image.url;
-        }
-        if (details.image_url) {
-            img = details.image_url;
-        } */  
 
         productDetails.innerHTML += 
         `<div class="product-details"> 

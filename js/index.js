@@ -50,10 +50,8 @@ const featuredProducts = document.querySelector(".featured-products");
 	try {
         const response = await fetch(featuredUrl);
         const featured = await response.json();
-        console.log(featured);
-
-       
-             
+        
+        
             for (let i = 0; i < featured.length; i++) { 
 
             if(featured[i].featured === true) {

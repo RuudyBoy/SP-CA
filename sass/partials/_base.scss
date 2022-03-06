@@ -27,19 +27,20 @@ body {
     text-align: center;
 }
 
+//Product design
+
+.featured,.product ,.cart-product{
+    text-align: center;
+    background-color: getColour(white);
+    margin: 10px;
+    padding:20px;
+}
 
 //featured
 
 .featured-products {
     display: grid;
     grid-template-rows: 1fr;
-}
-
-.featured {
-    text-align: center;
-    background-color: getColour(white);
-    margin: 10px;
-    padding:20px;
 }
 
 .featured img {
@@ -64,18 +65,7 @@ body {
 
 
 
-.product {
-    text-align: center;
-    background-color: getColour(white);
-    margin: 10px;
-    padding-bottom: 10px;
-}
-
 //Cartpage
-
-.price {
-    font-weight: bold;
-}
 
 .cart {
     display: grid;
@@ -86,13 +76,12 @@ body {
     max-height: 200px;
 }
 
-.cart-product {
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-    background-color: getColour(white);
-    border-radius: 10px;
+.price {
+    font-weight: bold;
 }
+
+
+//Call to action`s
 
 .cta-button { 
     background-color: getColour(blue);
@@ -102,30 +91,28 @@ body {
     padding: 1em 4em;
     cursor: pointer;
     display: table;
-}
-
-.cta-button:hover { 
+    
+    &:hover { 
     border: 2px solid getColour(darkgrey);
-    color: getColour(white);
     font-size: 1.2em;
-    transition: 00.5s;
+    transition: 0.5s;
     background-color: getColour(hover);
+}
 }
 
 .cta-link {
     color: getColour(blue);
     margin-bottom: 10px;
+
+    &:hover {
+        font-size: 1.2em;
+        text-decoration: underline;
+        transition: 0.5s;
+     }
 }
 
-.cta-link:hover {
-   font-size: 1.1em;
-   text-decoration: underline;
-   transition: 0.5s;
-}
-/*border-radius: 2px;
-    background-color: getColour(blue);
-    padding: 10px;
-    margin: 5px;*/
+
+//image
 
 img {
     margin: 0px auto;

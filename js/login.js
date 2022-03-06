@@ -22,13 +22,13 @@ function submitForm(event) {
     const passwordValue = password.value.trim();
 
     if (usernameValue.length === 0 || passwordValue.length === 0) {
-        return displayMessage("warning", "Invalid values", ".message-container");
+        return displayMessage("warning", "Email/password is incorrect. Please try again.", ".message-container");
     }
 
-    doLogin(usernameValue, passwordValue);
+    doSignin(usernameValue, passwordValue);
 }
 
-async function doLogin(username, password) {
+async function doSignin(username, password) {
     const url = baseUrl + "auth/local";
 
     const data = JSON.stringify({ identifier: username, password: password });
@@ -48,7 +48,7 @@ async function doLogin(username, password) {
         console.log(json);
 
         if (json.user) {
-            displayMessage("success", "Successfully logged in", ".message-container");
+            displayMessage("success", "You are signed in!", ".message-container");
 
             saveToken(json.jwt);
             saveUser(json.user);
@@ -57,7 +57,7 @@ async function doLogin(username, password) {
         }
 
         if (json.error) {
-            displayMessage("warning", "Invalid login details", ".message-container");
+            displayMessage("warning", "Invalid signin details", ".message-container");
         }
 
         console.log(json);

@@ -86,7 +86,6 @@ async function updateProduct(title, image, price, description, id) {
         },
     };
 
-   
 
     try {
         const response = await fetch(url, options);

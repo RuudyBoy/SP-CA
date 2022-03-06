@@ -64,7 +64,7 @@ async function addProduct(title, image, price, description) {
         const json = await response.json();
 
         if (json.created_at) {
-            displayMessage("success", "Product created", ".message-container");
+            displayMessage("success", "Product is created", ".message-container");
             form.reset();
         }
 
@@ -75,6 +75,6 @@ async function addProduct(title, image, price, description) {
         console.log(json);
     } catch (error) {
         console.log(error);
-        displayMessage("error", "An error occured", ".message-container");
+        displayMessage("error", "An error has occured", ".message-container");
     }
 }

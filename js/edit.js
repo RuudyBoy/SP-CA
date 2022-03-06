@@ -93,7 +93,7 @@ async function updateProduct(title, image, price, description, id) {
         console.log(json);
 
         if (json.updated_at) {
-            displayMessage("success", "Product updated", ".message-container");
+            displayMessage("success", "Product is updated", ".message-container");
         }
 
         if (json.error) {

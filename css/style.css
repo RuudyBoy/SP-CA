@@ -279,9 +279,8 @@ img {
 }
 
 .logo {
-  display: -ms-grid;
-  display: grid;
-  color: aqua;
+  display: inline;
+  float: left;
 }
 
 i {

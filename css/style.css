@@ -278,6 +278,12 @@ img {
   font-size: 1.2em;
 }
 
+.logo {
+  display: -ms-grid;
+  display: grid;
+  color: aqua;
+}
+
 i {
   padding: 10px;
   font-size: 30px;

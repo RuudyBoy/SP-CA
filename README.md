@@ -20,14 +20,9 @@ Installing
 Clone the repo:
 git clone git@github.com:RuudyBoy/Semester-project2.git
 
-Install the dependencies:
-npm install
+To run the app:
+Right click on the "index.html" and click on "open with live server".
 
-Running
-
-To run the app, run the following commands:
-
-npm run start or npm start
 
 Contributing
 If changing some code please write in detail what you have changed so i can review the code.

@@ -2,7 +2,8 @@
 
 Semester project 2
 
-image.png
+
+![sp](https://user-images.githubusercontent.com/73653923/196039530-2c3f091f-d716-4c92-9d30-990d3c521a09.png)
 
 
 Description
